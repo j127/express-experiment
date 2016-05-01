@@ -20,7 +20,7 @@ let conversation = [{ msg: 'first message from db' }, { msg: 'second message fro
 
 app.get('/', (req, res) => {
     let body = 'Send a chat message';
-    res.render('home', {title: 'home page', msg: body, conversation: conversation})
+    res.render('home', {title: 'Chatroom', msg: body, conversation: conversation})
 });
 
 app.get('/about', (req, res) => {

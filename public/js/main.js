@@ -4,17 +4,16 @@ $(document).ready(function () {
         console.log(data);
         let receivedMessage = JSON.parse(data);
         appendMessage(receivedMessage.msg);
-        // socket.emit('chat message', {my: data});
     });
 
-    // var sendButton = document.getElementById('send');
     var $inputBox = $('input#msg');
     var $discussionArea = $('#discussionArea');
 
-    var $chatForm = $('form');
+    var $chatForm = $('form#chatInput');
 
     $inputBox.prop("disabled", false).focus();
     $('#loader').hide();
+    $chatForm.fadeIn();
     $chatForm.on('submit', function (e) {
         e.preventDefault();
         let message = $inputBox.val();

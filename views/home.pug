@@ -2,17 +2,19 @@ doctype
 html(lang='en')
   head
     title= title
+    link(href='css/bootstrap.css', rel='stylesheet')
     link(href='css/style.css', rel='stylesheet')
   body
-    h1= title
-    div= msg
-    img(src='images/loading.gif', id='loader')
-    div#discussionArea
-      div.chatMessage
-        each m in conversation
-          li= m.msg
-    form
-      input#msg(type='text', disabled='')
-    script(src='js/jquery.min.js')
-    script(src='socket.io/socket.io.js')
-    script(src='js/main.js')
+    .container
+      h1= title
+      div.lead= msg
+      img(src='images/loading.gif', id='loader')
+      div#discussionArea
+        div.chatMessage
+          each m in conversation
+            div= m.msg
+      form#chatInput(role='form')
+        input.form-control#msg(type='text', disabled='', placeholder='Type your message here')
+      script(src='js/jquery.min.js')
+      script(src='socket.io/socket.io.js')
+      script(src='js/main.js')
