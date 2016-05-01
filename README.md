@@ -1,1 +1,1 @@
-Quick Express experiment. Not for reuse.
+Quick Express experiment. Not suitable for reuse.
